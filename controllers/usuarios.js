@@ -51,9 +51,17 @@ const usuariosPut = async (req, res = response) => {
   res.json({ usuario });
 };
 
-const usuariosDelete = (req, res) => {
+const usuariosDelete = async(req, res) => {
+  const { id } = req.params;
+
+  //fisicamente lo borramos
+  //const usuario = await Usuario.findByIdAndDelete( id );
+
+  // Baja logica para mantener la integridad referencial
+  const usuario = await Usuario.findByIdAndUpdate( id, { estado: false });
+  
   res.json({
-    msg: "delete API - Controlador",
+   usuario
   });
 };
 
