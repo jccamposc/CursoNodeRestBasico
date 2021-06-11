@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 
 const dbConection = async() => {
     try {
-        console.log('variableMamona', process.env.MONGODB_CNN);
        await mongoose.connect( process.env.MONGODB_CNN, {
            useNewUrlParser: true, 
            useUnifiedTopology: true,
