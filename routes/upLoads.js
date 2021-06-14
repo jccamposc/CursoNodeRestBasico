@@ -9,7 +9,7 @@ const { coleccionesPermitidas } = require('../helpers/dbValidators');
 
 const router = Router();
 
-router.post('/', validarArchivoSubir, cargarArchivo);
+router.post('/', validarArchivoSubir, cargarArchivo); 
 
 router.put('/:coleccion/:id', [
     validarArchivoSubir,
